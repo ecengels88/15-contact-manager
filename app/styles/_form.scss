@@ -1,0 +1,47 @@
+.app {
+  display: flex;
+}
+
+.sidebar {
+  display: flex;
+  position: relative;
+  flex-basis: 20%;
+  flex-direction: column;
+  height: 100vh;
+  background: $c-formblue;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-title {
+  padding: 0.5rem 1rem;
+  background: $c-formtitle;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.form {
+  padding: 1rem;
+}
+
+.input {
+  margin-bottom: 0.5rem;
+
+  &__label {
+    margin: 0;
+  }
+
+  &__bar {
+    width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+}
+
+.submit {
+  position: absolute;
+  bottom: 0;
+  background: $c-formbutton;
+}
