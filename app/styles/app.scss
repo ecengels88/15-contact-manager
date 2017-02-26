@@ -5,6 +5,12 @@
 // @import 'font-awesome';
 @import 'box-sizing';
 
+$c-formtitle: #e7f4fd;
+$c-formblue: #51b0f4;
+$c-formbutton: #74c278;
+$c-buttontext: #fffef2;
+
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -15,12 +21,54 @@ ul {
   list-style: none;
 }
 
-
 .app {
   display: flex;
 }
 
 .sidebar {
-  flex-basis: 15%;
-  background: #f487be;
+  display: flex;
+  position: relative;
+  flex-basis: 20%;
+  flex-direction: column;
+  height: 100vh;
+  background: $c-formblue;
+}
+
+.sidebar-title {
+  padding: 0.5rem 1rem;
+  background: $c-formtitle;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.form {
+  padding: 1rem;
+}
+
+.input {
+  margin-bottom: 0.5rem;
+
+  &__label {
+    margin: 0;
+  }
+
+  &__bar {
+    width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+}
+
+.submit {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+  border: 0;
+  background: $c-formbutton;
+  color: $c-buttontext;
+  font-size: 0.8rem;
 }
