@@ -7,8 +7,28 @@ module('reducer', () => {
 });
 
 test('load all contacts', (assert) => {
-  const oldState = { contacts: [] };
+  const emptyState = { contacts: [] };
+  const oldState = { contacts: [{ firstName: 'Angelina', lastName: 'Jolie' }] };
   const actionOne = { type: 'CONTACT@FIND_ALL', data: [{ firstName: 'John', lastName: 'Cena' }] };
+  const actionTwo = { type: 'CONTACT@FIND_ALL', data: [{ firstName: 'Nic', lastName: 'Cage' }] };
 
+  assert.deepEqual(reducer(emptyState, actionOne), { contacts: actionOne.data });
   assert.deepEqual(reducer(oldState, actionOne), { contacts: actionOne.data });
+  assert.deepEqual(reducer(oldState, actionTwo), { contacts: actionTwo.data });
 });
+
+test('add a contact', (assert) => {
+  const emptyState = { contacts: [] };
+  const oldState = { contacts: [{ firstName: 'Angelina', lastName: 'Jolie' }] };
+  const actionOne = { type: 'CONTACT@CREATE', data: { firstName: 'Johnny', lastName: 'Depp' } };
+
+  assert.deepEqual(reducer(oldState, actionOne), { contacts: [{ firstName: 'Angelina', lastName: 'Jolie' }, actionOne.data] });
+});
+
+// test('add a snack', (assert) => {
+//   const oldState = { snacks: [{ name: 'Doritos' }] };
+//   const actionOne = { type: 'SNACK@CREATE', data: { name: 'Luna Bar' } };
+//
+//   assert.deepEqual(reducer(emptyState, actionOne), { snacks: [actionOne.data] });
+//
+// });
