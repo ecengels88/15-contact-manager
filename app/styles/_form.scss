@@ -1,10 +1,12 @@
 .app {
   display: flex;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .sidebar {
+  overflow: auto;
   display: flex;
-  position: relative;
   flex-basis: 20%;
   flex-direction: column;
   height: 100vh;
@@ -41,7 +43,6 @@
 }
 
 .submit {
-  position: absolute;
-  bottom: 0;
+
   background: $c-formbutton;
 }
