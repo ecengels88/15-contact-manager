@@ -24,11 +24,3 @@ test('add a contact', (assert) => {
 
   assert.deepEqual(reducer(oldState, actionOne), { contacts: [{ firstName: 'Angelina', lastName: 'Jolie' }, actionOne.data] });
 });
-
-// test('add a snack', (assert) => {
-//   const oldState = { snacks: [{ name: 'Doritos' }] };
-//   const actionOne = { type: 'SNACK@CREATE', data: { name: 'Luna Bar' } };
-//
-//   assert.deepEqual(reducer(emptyState, actionOne), { snacks: [actionOne.data] });
-//
-// });
