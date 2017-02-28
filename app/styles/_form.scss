@@ -5,13 +5,13 @@
 }
 
 .sidebar {
-  overflow: auto;
   display: flex;
   flex-basis: 20%;
   flex-direction: column;
   height: 100vh;
   background: $c-formblue;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+  overflow: auto;
 }
 
 .sidebar-title {
@@ -25,6 +25,7 @@
 }
 
 .form {
+  flex-grow: 1;
   padding: 1rem;
 }
 
