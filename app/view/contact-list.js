@@ -20,7 +20,9 @@ class ItemView {
   }
 
   render() {
-    this.el.querySelector('.name').innerText =
+    this.el.querySelector('.name').innerText = `${this.data.lastName}, ${this.data.firstName}`;
+    this.el.querySelector('.address').innerText = this.data.street;
+    this.el.querySelector('.citystate').innerText = `${this.data.city}, ${this.data.state}`;
   }
 }
 
@@ -41,6 +43,9 @@ export default class ContactListView {
     const contacts = this.store.getState().contacts;
     contacts.forEach((data) => {
       const view = new ItemView(data, this.store);
+      view.render();
+
+      this.el.appendChild(view.el);
     });
   }
 }
