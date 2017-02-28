@@ -22,5 +22,13 @@ test('add a contact', (assert) => {
   const oldState = { contacts: [{ firstName: 'Angelina', lastName: 'Jolie' }] };
   const actionOne = { type: 'CONTACT@CREATE', data: { firstName: 'Johnny', lastName: 'Depp' } };
 
+  assert.deepEqual(reducer(emptyState, actionOne), { contacts: [actionOne.data] });
   assert.deepEqual(reducer(oldState, actionOne), { contacts: [{ firstName: 'Angelina', lastName: 'Jolie' }, actionOne.data] });
+});
+
+test('delete a contact', (assert) => {
+  const oldState = { contacts: [{ firstName: 'Angelina', lastName: 'Jolie' }] };
+  const actionOne = { type: 'CONTACT@REMOVE', contacts: [] };
+
+  assert.deepEqual(reducer(oldState, actionOne), { contacts: actionOne.data });
 });
