@@ -1,3 +1,5 @@
+import { remove } from '../actions';
+
 class ItemView {
   constructor(data, store) {
     this.data = data;
@@ -17,6 +19,12 @@ class ItemView {
           <button class="button delete">Delete</button>
         </div>
       </div>`;
+  }
+
+  mounted() {
+    this.el.addEventListener('click', () => {
+      this.store.dispatch(remove(this.data.id));
+    });
   }
 
   render() {
@@ -43,6 +51,7 @@ export default class ContactListView {
     const contacts = this.store.getState().contacts;
     contacts.forEach((data) => {
       const view = new ItemView(data, this.store);
+      view.mounted();
       view.render();
 
       this.el.appendChild(view.el);

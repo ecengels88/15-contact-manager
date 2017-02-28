@@ -1,5 +1,6 @@
 import ContactFormView from '../view/contact-form';
 import ContactListView from '../view/contact-list';
+import { findAll } from '../actions';
 
 export default class AppController {
   constructor(el, store) {
@@ -22,7 +23,7 @@ export default class AppController {
     // load data from localstorage to start the app
     this.store.dispatch({
       type: 'CONTACT@FIND_ALL',
-      contacts: JSON.parse(window.localStorage.contacts || '[]')
+      data: JSON.parse(window.localStorage.contacts || '[]')
     });
   }
 }
