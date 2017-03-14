@@ -3,4 +3,17 @@
 
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 // @import 'font-awesome';
+
+$c-formtitle: #e7f4fd;
+$c-formblue: #51b0f4;
+$c-formbutton: #74c278;
+$c-buttontext: #fffef2;
+$c-background: #f0f0f0;
+$c-white: #fff;
+$c-redbutton: #e64342;
+$c-border: #d3dbde;
+
 @import 'box-sizing';
+@import 'resets';
+@import 'form';
+@import 'grid';
