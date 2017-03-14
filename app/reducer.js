@@ -6,7 +6,7 @@ export default function reducer(state, action) {
       return { contacts: action.data };
     case 'CONTACT@REMOVE':
       return {
-        contacts: state.contacts.filter(contacts => contacts.id !== action.id)
+        contacts: state.contacts.filter(c => c.id !== action.id)
       };
     default:
       return state || { contacts: [] };

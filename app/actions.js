@@ -5,11 +5,10 @@ export function findAll(contacts) {
   };
 }
 
-export function create(contacts) {
+export function create(formData) {
   return {
     type: 'CONTACT@CREATE',
-    data: contacts,
-    id: new Date()
+    data: { ...formData, id: (new Date()).toString() },
   };
 }
 
